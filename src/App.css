@@ -1,0 +1,7 @@
+.app-wrapper {
+  display: grid;
+
+  grid-template-areas: "h h " "m m ";
+  grid-template-rows: 100px 2000px;
+  grid-template-columns: 2fr 10fr;
+}
