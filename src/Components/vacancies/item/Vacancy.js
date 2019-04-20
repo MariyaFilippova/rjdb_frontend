@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Vacancy.module.css'
 
 const Vacancy = (props) => {
+
     const sendResumeButtonClick = () => {
         props.sendResume(props.id);
     };

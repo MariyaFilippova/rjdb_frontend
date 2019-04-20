@@ -2,8 +2,12 @@ import React from 'react';
 import Product from "./item/Vacancy";
 import s from "./VacancyPage.module.css";
 
-const VacancyPage = (props) =>
+let VacancyPage = (props) =>
 {
+    if (props.mustFetch) {
+        props.fetchVacancies();
+        props.setMustFetch(false);
+    }
 
     let vacancies = props.vacancies
         .map(vacancy => <Product key={vacancy.id}
@@ -23,6 +27,6 @@ const VacancyPage = (props) =>
         </div>
     );
 
-}
+};
 
 export default VacancyPage;
