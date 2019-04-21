@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from "./item/Vacancy";
+import Vacancy from "./item/Vacancy";
 import s from "./VacancyPage.module.css";
 
 let VacancyPage = (props) =>
@@ -10,17 +10,17 @@ let VacancyPage = (props) =>
     }
 
     let vacancies = props.vacancies
-        .map(vacancy => <Product key={vacancy.id}
+        .map(vacancy => <Vacancy key={vacancy.id}
                                  id={vacancy.id}
-                                 name={vacancy.name}
                                  company = {vacancy.companyId}
                                  vacancy = {vacancy.vacancy}
-                                 sendResume={props.sendResume}/>);
+                                 name={vacancy.name}
+                                 />);
 
     return (
-        <div className={'s.vacancyPageWrapper'}>
+        <div className={s.vacancyPageWrapper}>
 
-            <div className={'s.vacancyPageMain'}>
+            <div className={s.vacancyPageMain}>
                 {vacancies}
             </div>
 

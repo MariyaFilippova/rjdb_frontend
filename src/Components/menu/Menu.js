@@ -17,7 +17,9 @@ const Menu =  () => {
                 <div className= {s.item}>
                     <NavLink to = "/log out" activeClassName={s.active}> Log out </NavLink>
                 </div>
-                    <NavLink to = "/sent_resumes" activeClassName={s.active}> Sent Resumes </NavLink>
+                <div className={s.item}>
+                    <NavLink to = "/sent_resumes" activeClassName={s.active}> Sent Resume </NavLink>
+                </div>
             </div>);
 
 

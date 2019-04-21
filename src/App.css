@@ -4,11 +4,12 @@
   grid-template-areas:
           "h h "
           "m c ";
-  grid-template-rows: 100px 2000px;
-  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 90px 2000px;
+  grid-template-columns: 2fr 11fr;
   grid-gap: 10px;
 }
 .app-wrapper-content{
   grid-area: c;
-  background-color: #ede9ee;
+  background-color: #231c2c;
+  background-image: url(https://www.wraltechwire.com/wp-content/uploads/2019/02/jobs-hiring-help-wanter.jpg)
 }

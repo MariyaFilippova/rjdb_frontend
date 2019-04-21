@@ -3,8 +3,6 @@ import React from 'react';
 import s from './Resumes.module.css'
 
 
-
-
 const Resume = (props) =>
  {
      return (

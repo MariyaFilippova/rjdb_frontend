@@ -1,6 +1,6 @@
 import React from "react";
 import ResumePage from "./ResumePage";
-import { fetchResumeCreator, setMustFetchResumeCreator} from "../../redux/resumeReducer";
+import { fetchResumeCreator, setMustFetchResumeCreator, addResumeCreator} from "../../redux/resumeReducer";
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
@@ -16,6 +16,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         fetchResumes: () => {
             dispatch(fetchResumeCreator());
+        },
+        addResume: () => {
+            dispatch(addResumeCreator());
         }
     };
 };

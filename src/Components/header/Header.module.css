@@ -1,12 +1,17 @@
 .header {
     grid-area: h;
-    background-color: #ffdab3;
+    background-color: lightseagreen;
 }
 .item
 {
-    margin-left: 700px;
+    margin-left: 500px;
     color: #231c2c;
     font-size: 250%;
 
     font-family: "Droid Sans Mono Slashed", sans-serif;
+}
+.img
+{
+    margin-left: 2%;
+    line-height: 500px;
 }

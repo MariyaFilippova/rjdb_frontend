@@ -6,6 +6,7 @@ const FETCH_RESUMES = 'FETCH_ORDERS';
 const FETCH_RESUMES_PENDING = 'FETCH_ORDERS_PENDING';
 const FETCH_RESUMES_REJECTED = 'FETCH_ORDERS_REJECTED';
 const FETCH_RESUMES_FULFILLED = 'FETCH_ORDERS_FULFILLED';
+const ADD_RESUME = 'ADD_RESUME';
 
 let initialState = {
 
@@ -15,6 +16,7 @@ let initialState = {
     error: null,
     resumes: []
 };
+
 
 const resumeReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -43,9 +45,20 @@ const resumeReducer = (state = initialState, action) => {
                 ...state,
                 fetching: false,
                 fetched: true,
-            }
+            };
+        case ADD_RESUME:
+            return addResume(state, action);
+        default:
+            return state;
+
     }
+
 };
+
+    const addResume = (state) =>
+    {
+
+    };
 
     export const setMustFetchResumeCreator = (newValue) => {
         return {
@@ -54,11 +67,21 @@ const resumeReducer = (state = initialState, action) => {
         }
     };
 
+    export const addResumeCreator = () =>
+    {
+        return{
+            type: ADD_RESUME,
+
+
+
+        }
+    };
+
 
     export const fetchResumeCreator = () => {
         return {
             type: FETCH_RESUMES,
-            payload: axios.get("http://localhost:8080/mipt-shop/resumes")
+            payload: axios.get("http://localhost:8080/resumes")
         }
     };
 

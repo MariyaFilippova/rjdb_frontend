@@ -1,3 +1,26 @@
-.resumeItem {
+.vacancy_wrapper{
+    margin-left: 30%;
+}
+.definition {
+    color: lightblue;
+    font-size: 150%;
+    line-height: 200%;
+    text-shadow: black 2px 2px 0;
 
+}
+.vacancy
+{
+    font-size: 180%;
+    color: black;
+    font-family: "Al Nile", serif;
+
+}
+.sendingResumeButton
+{
+    font-size: 190%;
+
+}
+.button{
+    text-decoration: none;
+    color: lightseagreen;
 }

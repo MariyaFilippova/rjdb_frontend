@@ -1,8 +1,23 @@
-.noResumesMessage
+.noResume
 {
+    margin-left: 20%;
+    font-size: 300%;
 
 }
 .resumePageWrapper
 {
 
+}
+.addingNewResumeButton a
+{
+    font-size: 300%;
+    text-decoration: none;
+    color: darkblue;
+    margin-left: 30%;
+
+
+}
+a.active
+{
+    color: gray;
 }

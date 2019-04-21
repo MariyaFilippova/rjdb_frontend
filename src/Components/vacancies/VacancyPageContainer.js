@@ -4,15 +4,16 @@ import {
     fetchVacanciesCreator,
     setMustFetchVacanciesCreator,
     sendResumeCreator,
-} from "../../redux/VacancyReducer";
+} from "../../redux/vacancyReducer";
 
 
 let mapStateToProps = (state) => {
     return {
         vacancies: state.vacancyPage.vacancies,
-        mustFetch: state.vacancyPage.mustFetch
+        mustFetch: state.vacancyPage.mustFetch,
     };
 };
+
 
 let mapDispatchToProps = (dispatch) => {
     return {
