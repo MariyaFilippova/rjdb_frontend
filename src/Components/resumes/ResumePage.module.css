@@ -12,12 +12,19 @@
 {
     font-size: 300%;
     text-decoration: none;
-    color: darkblue;
+    color: darkslategrey;
     margin-left: 30%;
 
-
+}
+.resumePage{
+    margin-left: 100%;
 }
 a.active
 {
     color: gray;
+}
+.resumeForm
+{
+    font-size: 120%;
+    margin-left: 50%;
 }

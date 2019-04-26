@@ -6,17 +6,30 @@ import s from './Resumes.module.css'
 const Resume = (props) =>
  {
      return (
-         <div className={'s.resume-wrapper'}>
 
-             <div className={'s.resume-description'}>
-                 {props.name}
-                 {props.resume}
-                 {props.photo}
-                 {props.area}
-                 {props.status}
+             <div className={s.resume_wrapper}>
+
+
+                 <div className={s.resume_description}>
+                     <a className={s.definition}> Vacancy:</a>
+                     <a className={s.resume}> {props.name}</a>
+                     <br/>
+                     <a className={s.definition}> Details: </a>
+                     <a className={s.resume}> {props.resume}</a>
+                     <br/>
+                     <a className={s.definition}> Area: </a>
+                     <a className={s.resume}> {props.area_id}</a>
+                     <br/>
+                     <a className={s.definition}> Status: </a>
+                     <a className={s.resume}>{props.status}</a>
+                     <br/>
+                     <a className={s.definition}> Company: </a>
+                     <a className={s.resume}> {props.company_id}</a>
+                     <br/>
+                 </div>
              </div>
-         </div>
+
      );
 };
 
-export default Resume
+export default Resume;

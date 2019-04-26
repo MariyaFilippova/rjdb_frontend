@@ -1,23 +1,39 @@
 .vacancy_wrapper{
-    margin-left: 30%;
-}
-.definition {
-    color: lightblue;
-    font-size: 150%;
-    line-height: 200%;
-    text-shadow: black 2px 2px 0;
+    display: grid;
+
+    grid-template-areas:
+            "h v h ";
+
+    grid-template-columns: 5fr 5fr 5fr;
+
+    scroll-padding-right: 3%;
 
 }
-.vacancy
+.definition {
+    color: darkslategrey;
+    font-size: 150%;
+    line-height: 150%;
+    text-shadow: black 1px 1px 0;
+
+
+
+}
+.vacancy_description
 {
-    font-size: 180%;
+    grid-area: v;
+    font-size: 100%;
     color: black;
-    font-family: "Al Nile", serif;
+    font-family: "Apple LiSung", serif;
+    margin-right: 40%;
+
+    background-color: darkseagreen;
 
 }
 .sendingResumeButton
 {
-    font-size: 190%;
+    font-size: 170%;
+    text-decoration: none;
+    margin-left:30%;
 
 }
 .button{

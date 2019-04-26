@@ -3,9 +3,6 @@ import s from './Vacancy.module.css'
 import {NavLink} from "react-router-dom";
 
 const Vacancy = (props) => {
-    if (props.hidden) {
-        return null;
-    }
 
     const sendResumeButtonClick = () => {
         props.sendResume(props.id);
@@ -23,17 +20,19 @@ const Vacancy = (props) => {
                 <a className={s.vacancy}> {props.vacancy}</a>
                     <br/>
                 <a className={s.definition}> Area: </a>
-                <a className={s.vacancy}>{props.area_id}</a>
+                <a className={s.vacancy}> {props.area_id}</a>
                     <br/>
                 <a className={s.definition}> Status: </a>
                 <a className={s.vacancy}>{props.status}</a>
                     <br/>
                 <a className={s.definition}> Company: </a>
-                <a className={s.vacancy}>{props.company_id}</a>
+                <a className={s.vacancy}> {props.company_id}</a>
+                <br/>
+
+                <button className={s.sendingResumeButton}>
+                    <NavLink> Send a Resume {sendResumeButtonClick} </NavLink>
+                </button>
             </div>
-            <button className={s.sendingResumeButton}>
-                <NavLink to = "/resumeform" activeClassName={s.button}> Send a Resume {sendResumeButtonClick}</NavLink>
-            </button>
         </div>
     )
 };

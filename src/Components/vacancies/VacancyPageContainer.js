@@ -1,5 +1,5 @@
 import {connect} from "react-redux";
-import ProductPage from "./VacancyPage";
+import VacancyPage from "./VacancyPage";
 import {
     fetchVacanciesCreator,
     setMustFetchVacanciesCreator,
@@ -21,6 +21,7 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(setMustFetchVacanciesCreator(newValue));
         },
         fetchVacancies: () => {
+
             dispatch(fetchVacanciesCreator());
         },
         sendResume: (vacancyId) => {
@@ -29,6 +30,6 @@ let mapDispatchToProps = (dispatch) => {
     };
 };
 
-let VacancyPageContainer = connect(mapStateToProps, mapDispatchToProps)(ProductPage);
+let VacancyPageContainer = connect(mapStateToProps, mapDispatchToProps)(VacancyPage);
 
 export default VacancyPageContainer;

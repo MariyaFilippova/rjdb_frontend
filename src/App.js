@@ -7,7 +7,7 @@ import VacancyPageContainer from "./Components/vacancies/VacancyPageContainer";
 import ResumePageContainer from "./Components/resumes/ResumePageContainer";
 import {BrowserRouter, Route} from "react-router-dom";
 import Profile from "./Components/profile/Profile";
-import ResumeForm from "./Components/resumes/item/ResumeForm";
+
 const App =  (props) => {
     return (
         <BrowserRouter>
@@ -21,10 +21,6 @@ const App =  (props) => {
                    />
                    <Route path= "/vacancies" render = { () => <VacancyPageContainer store = {props.store}/>}
                    />
-                   <Route path= "/resumeform" render = { () => <ResumeForm store = {props.store}/>}
-                   />
-
-
 
                </div>
             </div>

@@ -18,7 +18,7 @@ const Menu =  () => {
                     <NavLink to = "/log out" activeClassName={s.active}> Log out </NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to = "/sent_resumes" activeClassName={s.active}> Sent Resume </NavLink>
+                    <NavLink to = "/resumeform" activeClassName={s.active}> Sent Resume </NavLink>
                 </div>
             </div>);
 

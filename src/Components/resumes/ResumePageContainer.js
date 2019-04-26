@@ -1,12 +1,26 @@
-import React from "react";
+
 import ResumePage from "./ResumePage";
-import { fetchResumeCreator, setMustFetchResumeCreator, addResumeCreator} from "../../redux/resumeReducer";
+import {
+    fetchResumeCreator,
+    setMustFetchResumeCreator,
+    addResumeCreator,
+    updateResumeCreator,
+    updateNameCreator,
+    selectAreaCreator,
+    fetchAreasCreator
+
+} from "../../redux/resumeReducer";
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
         mustFetch: state.resumePage.mustFetch,
         resumes: state.resumePage.resumes,
+        resumeResume: state.resumePage.resumeResume,
+        resumeName: state.resumePage.resumeName,
+        selectedArea: state.resumePage.selectedArea,
+        areas: state.resumePage.areas,
+
     }
 };
 let mapDispatchToProps = (dispatch) => {
@@ -19,6 +33,23 @@ let mapDispatchToProps = (dispatch) => {
         },
         addResume: () => {
             dispatch(addResumeCreator());
+
+        },
+        fetchAreas: () => {
+            dispatch(fetchAreasCreator());
+        },
+
+        resumeChange: (event) => {
+            let newText = event.target.value;
+            dispatch(updateResumeCreator(newText));
+        },
+        nameChange: (event) => {
+            let newText = event.target.value;
+            dispatch(updateNameCreator(newText))
+        },
+        selectArea: (event) => {
+            let area = event.target.value;
+            dispatch(selectAreaCreator(area))
         }
     };
 };

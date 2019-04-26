@@ -27,13 +27,8 @@ const vacancyReducer = (state = initialState, action) => {
                 fetching: false,
             };
 
-
         case FETCH_VACANCIES:
-            return{
-                ...state,
-                fetched: true,
-            };
-
+            return fetchVacanciesCreator();
 
         case FETCH_VACANCIES_REJECTED:
             return {
@@ -52,7 +47,7 @@ const vacancyReducer = (state = initialState, action) => {
     }
 };
 const sendResume = (state, action) => {
-    axios.post("http://localhost:8080/rjdb/resumes/???");
+    axios.post("http://localhost:8080/rjdb/resum/");
     return state;
 };
 const fetchVacanciesFulfilled = (state, action) => {
