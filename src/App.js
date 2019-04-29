@@ -20,6 +20,7 @@ const App =  (props) => {
                    <Route path= "/profile" render = { () => <Profile store = {props.store}/>}
                    />
                    <Route path= "/vacancies" render = { () => <VacancyPageContainer store = {props.store}/>}
+
                    />
 
                </div>

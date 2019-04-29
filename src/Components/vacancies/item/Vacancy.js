@@ -1,12 +1,14 @@
 import React from 'react';
 import s from './Vacancy.module.css'
-import {NavLink} from "react-router-dom";
+import Resume from "../../resumes/item/Resume";
 
-const Vacancy = (props) => {
+let Vacancy = (props) => {
+    if (props.mustFetch) {
+        props.fetchResumes();
+        props.setMustFetch(false);
+        props.setMustFetchResumes(false)
+    }
 
-    const sendResumeButtonClick = () => {
-        props.sendResume(props.id);
-    };
 
     return (
         <div className={s.vacancy_wrapper}>
@@ -20,18 +22,15 @@ const Vacancy = (props) => {
                 <a className={s.vacancy}> {props.vacancy}</a>
                     <br/>
                 <a className={s.definition}> Area: </a>
-                <a className={s.vacancy}> {props.area_id}</a>
+                <a className={s.vacancy}> {props.area}</a>
                     <br/>
                 <a className={s.definition}> Status: </a>
                 <a className={s.vacancy}>{props.status}</a>
                     <br/>
                 <a className={s.definition}> Company: </a>
-                <a className={s.vacancy}> {props.company_id}</a>
+                <a className={s.vacancy}> {props.companyId}</a>
                 <br/>
 
-                <button className={s.sendingResumeButton}>
-                    <NavLink> Send a Resume {sendResumeButtonClick} </NavLink>
-                </button>
             </div>
         </div>
     )

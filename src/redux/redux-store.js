@@ -13,6 +13,7 @@ let reducers = combineReducers({
     routing: routerReducer,
     vacancyPage: vacancyReducer,
     resumePage: resumeReducer,
+    vacancy: resumeReducer
 });
 
 export let browserHistory = createBrowserHistory();

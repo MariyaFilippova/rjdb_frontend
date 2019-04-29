@@ -1,10 +1,12 @@
 
 import React from 'react';
-import s from './Resumes.module.css'
+import s from './Resumes.module.css';
+import Status from "./Status";
 
 
 const Resume = (props) =>
  {
+     console.log(props.statusCode);
      return (
 
              <div className={s.resume_wrapper}>
@@ -21,10 +23,7 @@ const Resume = (props) =>
                      <a className={s.resume}> {props.area_id}</a>
                      <br/>
                      <a className={s.definition}> Status: </a>
-                     <a className={s.resume}>{props.status}</a>
-                     <br/>
-                     <a className={s.definition}> Company: </a>
-                     <a className={s.resume}> {props.company_id}</a>
+                     <Status status = {props.statusCode}/>
                      <br/>
                  </div>
              </div>

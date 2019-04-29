@@ -18,7 +18,7 @@ let mapStateToProps = (state) => {
         resumes: state.resumePage.resumes,
         resumeResume: state.resumePage.resumeResume,
         resumeName: state.resumePage.resumeName,
-        selectedArea: state.resumePage.selectedArea,
+        resumeArea: state.resumePage.resumeArea,
         areas: state.resumePage.areas,
 
     }
@@ -33,6 +33,7 @@ let mapDispatchToProps = (dispatch) => {
         },
         addResume: () => {
             dispatch(addResumeCreator());
+            dispatch(setMustFetchResumeCreator(true))
 
         },
         fetchAreas: () => {

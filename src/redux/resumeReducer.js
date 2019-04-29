@@ -23,8 +23,7 @@ let initialState = {
     areas: [],
     resumeResume: "",
     resumeName: "",
-    resumeArea: "",
-
+    resumeAreaId: ""
 
 };
 
@@ -88,9 +87,9 @@ const resumeReducer = (state = initialState, action) => {
         return stateCopy;
     };
 
-    const selectArea = (state, newArea) => {
+    const selectArea = (state, action) => {
         let stateCopy = {...state};
-        stateCopy.selectedArea = newArea;
+        stateCopy.resumeAreaId = action.resumeAreaId;
         return stateCopy;
     };
     const fetchResumesFulfilled = (state, action) => {
@@ -117,12 +116,12 @@ const resumeReducer = (state = initialState, action) => {
         let resumeDto  = {
             resume : stateCopy.resumeResume,
             name : stateCopy.resumeName,
-            area : stateCopy.resumeArea,
+            area : stateCopy.resumeAreaId,
         };
         axios.post("http://localhost:8080/resumes/create_resume", resumeDto);
         stateCopy.resumeName = "";
         stateCopy.resumeResume = "";
-        stateCopy.resumeArea = "";
+        stateCopy.resumeAreaId = "";
         return stateCopy;
     };
 
@@ -155,11 +154,11 @@ const resumeReducer = (state = initialState, action) => {
             newText: newText,
         }
     };
-    export const selectAreaCreator = (area) =>
+    export const selectAreaCreator = (resumeAreaId) =>
     {
         return {
             type: SELECT_AREA,
-            area: area,
+            resumeAreaId: resumeAreaId
         }
 
 

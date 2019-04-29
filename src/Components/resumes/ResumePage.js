@@ -13,10 +13,8 @@ const ResumePage = (props) => {
     }
 
 
-
     const onAddResume = () =>
     {
-        console.log('clicked');
         props.addResume();
     };
     const onResumeChange = (event) =>
@@ -37,11 +35,16 @@ const ResumePage = (props) => {
         .map((resume) => <Resume key={resume.id}
                                  id={resume.id}
                                  name={resume.name}
-                                 resume = {resume.resume}/>
+                                 resume = {resume.resume}
+                                 area_id = {resume.area_id}
+                                 statusCode = {resume.status}
+            />
         );
+    console.log(resumes);
+
     let areas = props.areas
-        .map((area) => <Area key = {area.id}
-                                 id={area.id}
+        .map((area) => <Area key = {area.area_id}
+                                 id={area.area_id}
                                  area = {area.area}/>
         );
 
@@ -62,10 +65,12 @@ const ResumePage = (props) => {
                          <br/>
                          <div>
                             Select area:
-                            <select  >
+                            <select onChange={onAreaChange}
+                                    value ={props.resumeAreaId}>
                                 <option /> { areas.map((area) =>
-                            {return <option key={area.id} value={area.area}> {area.text}>
-                                {areas}
+
+                            {return <option key={area.props.id} value={area.props.id}> {area.props.area}>
+
                                 </option>
                             })
                             }
@@ -93,15 +98,26 @@ const ResumePage = (props) => {
                                       value={props.resumeName}
                                       placeholder={'Enter name of vacancy:'}
                             />
+                        </div>
+
+
 
                             <br/>
                             Select area:
-                            <select value={props.resumeArea}
+                            <select value={props.resumeAreaId}
                                     onChange={onAreaChange}>
-                                {areas}
+                                <option> </option>
+                                {areas.map(area => {
+                                    return (
+                                        <option
+                                            key={area.id} value = {area.props.area} >{area.props.area}
+                                        </option>
+                                    );
+                                })}
+
                             </select>
 
-                        </div>
+
 
                         <div>
                         <button className={s.button} onClick={onAddResume}> Add Resume </button>

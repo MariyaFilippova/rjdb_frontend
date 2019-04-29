@@ -3,12 +3,17 @@ import VacancyPage from "./VacancyPage";
 import {
     fetchVacanciesCreator,
     setMustFetchVacanciesCreator,
-    sendResumeCreator,
+
 } from "../../redux/vacancyReducer";
+import {
+    fetchResumeCreator,
+    setMustFetchResumeCreator
+} from "../../redux/resumeReducer";
 
 
 let mapStateToProps = (state) => {
     return {
+        resumes: state.vacancyPage.resumes,
         vacancies: state.vacancyPage.vacancies,
         mustFetch: state.vacancyPage.mustFetch,
     };
@@ -20,13 +25,18 @@ let mapDispatchToProps = (dispatch) => {
         setMustFetch: (newValue) => {
             dispatch(setMustFetchVacanciesCreator(newValue));
         },
+        setMustFetchResumes: (newValue) =>
+        {
+            dispatch(setMustFetchResumeCreator(newValue))
+        },
         fetchVacancies: () => {
 
             dispatch(fetchVacanciesCreator());
         },
-        sendResume: (vacancyId) => {
-            dispatch(sendResumeCreator(vacancyId));
+        fetchResumes: () => {
+            dispatch(fetchResumeCreator())
         }
+
     };
 };
 
