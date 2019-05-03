@@ -26,8 +26,6 @@ let initialState = {
     resumeAreaId: ""
 
 };
-
-
 const resumeReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_MUST_FETCH_RESUMES:
@@ -53,19 +51,19 @@ const resumeReducer = (state = initialState, action) => {
                 fetching: false,
                 error: action.error
             };
-        case FETCH_RESUMES :
-            return fetchResumeCreator();
         case FETCH_RESUMES_FULFILLED:
-            return fetchResumesFulfilled(state, action);
-
+            return {
+                ...state,
+                fetching: false,
+                fetched: true,
+                resumes: action.payload.data,
+            };
         case UPDATE_NAME :
             return updateName(state, action.newText);
         case UPDATE_RESUME:
             return updateResume(state, action.newText);
-
         case ADD_RESUME:
             return addResume(state);
-
         case FETCH_AREAS_FULFILLED:
             return fetchAreasFulfilled(state, action);
         default:
@@ -79,27 +77,17 @@ const resumeReducer = (state = initialState, action) => {
         stateCopy.resumeName = newText;
         return stateCopy;
     };
-
-
     const updateResume = (state, newText) => {
         let stateCopy = {...state};
         stateCopy.resumeResume = newText;
         return stateCopy;
     };
-
     const selectArea = (state, action) => {
         let stateCopy = {...state};
         stateCopy.resumeAreaId = action.resumeAreaId;
         return stateCopy;
     };
-    const fetchResumesFulfilled = (state, action) => {
-        return {
-            ...state,
-            fetching: false,
-            fetched: true,
-            resumes: action.payload.data,
-        };
-    };
+
     const fetchAreasFulfilled = (state, action) => {
         return {
             ...state,
@@ -116,7 +104,7 @@ const resumeReducer = (state = initialState, action) => {
         let resumeDto  = {
             resume : stateCopy.resumeResume,
             name : stateCopy.resumeName,
-            area : stateCopy.resumeAreaId,
+            area_id : stateCopy.resumeAreaId,
         };
         axios.post("http://localhost:8080/resumes/create_resume", resumeDto);
         stateCopy.resumeName = "";
@@ -160,10 +148,7 @@ const resumeReducer = (state = initialState, action) => {
             type: SELECT_AREA,
             resumeAreaId: resumeAreaId
         }
-
-
     };
-
     export const fetchResumeCreator = () => {
         return {
             type: FETCH_RESUMES,

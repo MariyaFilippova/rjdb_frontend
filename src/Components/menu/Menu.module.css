@@ -1,19 +1,14 @@
 .menu {
     grid-area: m;
-
-}
-.menu {
-    background-color: #91ab7f;
-    line-height: 250%;
+    background-color: #5aab9b;
+    line-height: 550%;
 
 }
 .item a {
     font-family: "Droid Sans Mono Slashed", sans-serif;
-    margin-left: 20%;
+    margin-left: 10%;
     color: black;
-    font-size: x-large;
     text-decoration: none;
-
 }
 a.active
 {

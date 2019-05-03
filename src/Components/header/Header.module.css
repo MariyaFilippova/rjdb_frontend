@@ -2,16 +2,10 @@
     grid-area: h;
     background-color: lightseagreen;
 }
-.item
+.rjdb
 {
     margin-left: 500px;
-    color: #231c2c;
-    font-size: 250%;
+    color: white;
+    font-size: 150%;
 
-    font-family: "Droid Sans Mono Slashed", sans-serif;
-}
-.img
-{
-    margin-left: 2%;
-    line-height: 500px;
 }

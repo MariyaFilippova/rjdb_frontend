@@ -6,19 +6,16 @@ const Menu =  () => {
     return (
             <div className = {s.menu}>
                 <div className= {s.item} >
-                    <NavLink to = "/profile" activeClassName={s.active}> Profile </NavLink>
+                    <NavLink to = "/profile" activeClassName={s.active}> <b> Profile </b> </NavLink>
                 </div>
                 <div className= {s.item}>
-                    <NavLink to ="/resumes" activeClassName={s.active}> Resumes </NavLink>
+                    <NavLink to ="/resumes" activeClassName={s.active}> <b> Resumes </b> </NavLink>
                 </div>
                 <div className= {s.item}>
-                    <NavLink to ="/vacancies" activeClassName={s.active}> Vacancies </NavLink>
+                    <NavLink to ="/vacancies" activeClassName={s.active}> <b> Vacancies </b> </NavLink>
                 </div>
                 <div className= {s.item}>
-                    <NavLink to = "/log out" activeClassName={s.active}> Log out </NavLink>
-                </div>
-                <div className={s.item}>
-                    <NavLink to = "/resumeform" activeClassName={s.active}> Sent Resume </NavLink>
+                    <NavLink to = "/log out" activeClassName={s.active}> <b>Log out </b> </NavLink>
                 </div>
             </div>);
 

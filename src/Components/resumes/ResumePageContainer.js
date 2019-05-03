@@ -8,7 +8,6 @@ import {
     updateNameCreator,
     selectAreaCreator,
     fetchAreasCreator
-
 } from "../../redux/resumeReducer";
 import {connect} from "react-redux";
 
@@ -18,9 +17,8 @@ let mapStateToProps = (state) => {
         resumes: state.resumePage.resumes,
         resumeResume: state.resumePage.resumeResume,
         resumeName: state.resumePage.resumeName,
-        resumeArea: state.resumePage.resumeArea,
+        resumeAreaId: state.resumePage.resumeAreaId,
         areas: state.resumePage.areas,
-
     }
 };
 let mapDispatchToProps = (dispatch) => {
@@ -34,7 +32,6 @@ let mapDispatchToProps = (dispatch) => {
         addResume: () => {
             dispatch(addResumeCreator());
             dispatch(setMustFetchResumeCreator(true))
-
         },
         fetchAreas: () => {
             dispatch(fetchAreasCreator());

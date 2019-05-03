@@ -4,20 +4,3 @@
 
 }
 
-.definition {
-    color: darkslategrey;
-    font-size: 150%;
-    line-height: 150%;
-    text-shadow: black 1px 1px 0;
-
-}
-.resume_description
-{
-    grid-area: r;
-    font-size: 100%;
-    color: black;
-    font-family: "Apple LiSung", serif;
-    margin-right: 40%;
-    background-color: darkseagreen;
-
-}

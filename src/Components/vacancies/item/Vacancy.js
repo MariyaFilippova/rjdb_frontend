@@ -6,31 +6,48 @@ let Vacancy = (props) => {
     if (props.mustFetch) {
         props.fetchResumes();
         props.setMustFetch(false);
-        props.setMustFetchResumes(false)
     }
 
+
+
+    let resumes = props.resumes
+        .map((resume) => <Resume key={resume.id}
+                                 id={resume.id}
+                                 name={resume.name}
+                                 resume = {resume.resume}/>
+        );
+    console.log(resumes);
 
     return (
         <div className={s.vacancy_wrapper}>
 
-
-            <div className={s.vacancy_description}>
-                <a className={s.definition}> Vacancy:</a>
+            <div >
+                Vacancy:
                 <a className={s.vacancy}> {props.name}</a>
                     <br/>
-                <a className={s.definition}> Details: </a>
+                 Details:
                 <a className={s.vacancy}> {props.vacancy}</a>
                     <br/>
-                <a className={s.definition}> Area: </a>
+                Area:
                 <a className={s.vacancy}> {props.area}</a>
                     <br/>
-                <a className={s.definition}> Status: </a>
+                 Status:
                 <a className={s.vacancy}>{props.status}</a>
                     <br/>
-                <a className={s.definition}> Company: </a>
+                 Company:
                 <a className={s.vacancy}> {props.companyId}</a>
-                <br/>
-
+                    <br/>
+                <a className={s.vacancy}> Choose your resume: </a>
+                    <select className={s.select} value={props.id}>
+                        <option> </option>
+                        {resumes.map(resume => {
+                            return (
+                                <option
+                                    key={resume.props.id} > {resume.props.resume}
+                                </option>
+                            );
+                        })}
+                    </select>
             </div>
         </div>
     )
