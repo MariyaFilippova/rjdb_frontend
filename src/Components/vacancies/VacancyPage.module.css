@@ -35,7 +35,67 @@
     border-radius: 2em;
     transition: all .3s ease-out;
 }
-.vacancyPageMain
-{
+.main_container {
+    width: 500px;
+    height: 150px;
+    background: none;
+    transform: translate(60%, 50%);
+}
+.f {
+    top: 0;
+    left: 0;
+    height: 100%;
+    border-radius: 20px;
+    border-bottom: black;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    margin-bottom: 32%;
 
+}
+
+.f:hover {
+    transform: rotateY(180deg);
+}
+.card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    border-color: black;
+    border-bottom: 10px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    text-align: center;
+    background: #eeeeee;
+    color: #524f4e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+.back_card {
+    top:100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    overflow: hidden;
+    color: #524f4e;
+    background: #eeeeee;
+    font-size: 20px;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+.select{
+    background: url(https://png.icons8.com/ios/1600/double-down-filled.png) 96% / 15% no-repeat #eee;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 34%;
+}
+.vacancy{
+    margin-bottom: 5%;
+    margin-top: 5%;
 }

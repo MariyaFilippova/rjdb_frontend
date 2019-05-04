@@ -2,7 +2,7 @@
 import React from 'react';
 import Resume from "./item/Resume";
 import s from './ResumePage.module.css';
-import {NavLink} from "react-router-dom";
+
 import Area from "./item/Area";
 
 const ResumePage = (props) => {
@@ -52,7 +52,8 @@ const ResumePage = (props) => {
             return (
                 <div className={s.resumePageWrapper}>
                     <div className={s.noResume}>You don't have any resumes!</div>
-                    <div className={s.resumeForm}>
+                    <div className={s.form}>
+                        <div className={s.title}> Add a resume: </div>
 
                         <textarea className={s.area} onChange={onResumeChange}
                                                         value={props.resumeResume}
@@ -63,10 +64,10 @@ const ResumePage = (props) => {
                                                          value={props.resumeName}
                                                          placeholder={'Enter name of vacancy:'}/>
                          <br/>
-                    </div>
+
                          <div >
-                             <h1>Select area</h1>:
-                            <select onChange={onAreaChange}
+                             <c className={s.title}> Select area: </c>
+                            <select className={s.select} onChange={onAreaChange}
                                     value ={props.id}>
                                 <option /> { areas.map((area) =>
 
@@ -78,14 +79,18 @@ const ResumePage = (props) => {
                             </select>
                          </div>
 
-                        <button className={s.button} onClick={onAddResume}> Add Resume </button>
+                        <b  onClick={onAddResume}> Add Resume </b>
                     </div>
+                </div>
             )
         } else {
             return (
                 <div className={s.resumePageWrapper}>
+                    <table className={s.table} border="1px" width="1px" height="2000px"> </table>
 
-                        <div className={'s.resumeForm'}>
+                        <div className={s.form}>
+
+                            <div className={s.title}> Add a resume: </div>
                               <textarea className={s.area} onChange={onResumeChange}
                                         value={props.resumeResume}
                                         placeholder={'Enter information about your education and work experience:'}/>
@@ -95,32 +100,44 @@ const ResumePage = (props) => {
                                       value={props.resumeName}
                                       placeholder={'Enter name of vacancy:'}
                             />
-                        </div>
 
+                            <div className={s.title}> Select area: <div/>
+                            <select className={s.select} onChange={onAreaChange}
+                                    value ={props.id}>
+                                <option /> { areas.map((area) =>
 
+                            {return <option key={area.props.id} value={area.props.id}> {area.props.area}
 
+                            </option>
+                            })
+                            }
+                            </select>
                             <br/>
-                    <div>
-                        Select area:
-                        <select onChange={onAreaChange}
-                                value ={props.id}>
-                            <option /> { areas.map((area) =>
-
-                        {return <option key={area.props.id} value={area.props.id}> {area.props.area}>
-
-                        </option>
-                        })
-                        }
-                        </select>
-                    </div>
-                        <div>
                         <b onClick={onAddResume}> Add Resume </b>
+
+                            </div>
                         </div>
-                    <div className={'s.resumePage'}>
-                        Your resumes:
-                        {resumes}
+                    <div className={s.resumes}>
+                        <div className = {s.d}> Your resumes: </div>
+                        <div className={s.main_container}>
+                            {resumes.map((resume) =>
+                            <div className={s.f}>
+                                <div className={s.front_card}>
+                                    {resume.props.name}
+                                </div>
+                                <div className={s.back_card}>
+                                    Resume: {resume.props.resume}
+                                    <br/>
+                                    Status: {resume.props.statusCode}
+                                    <br/>
+                                    Area: {resume.props.area_id}
+                                </div>
+                            </div>
+                            )}
+                        </div>
                     </div>
                 </div>
+
 
             )
         }

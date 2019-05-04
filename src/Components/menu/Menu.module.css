@@ -2,10 +2,8 @@
     grid-area: m;
     background-color: #5aab9b;
     line-height: 550%;
-
 }
 .item a {
-    font-family: "Droid Sans Mono Slashed", sans-serif;
     margin-left: 10%;
     color: black;
     text-decoration: none;

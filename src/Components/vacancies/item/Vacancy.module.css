@@ -14,9 +14,6 @@
     font-size: 150%;
     line-height: 150%;
     text-shadow: black 1px 1px 0;
-
-
-
 }
 .vacancy_description
 {
@@ -29,14 +26,11 @@
     background-color: darkseagreen;
 
 }
-.sendingResumeButton
-{
-    font-size: 170%;
-    text-decoration: none;
-    margin-left:30%;
-
-}
-.button{
-    text-decoration: none;
-    color: lightseagreen;
+.select{
+    background: url(https://png.icons8.com/ios/1600/double-down-filled.png) 96% / 15% no-repeat #eee;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 30px;
+    width: 34%;
 }
