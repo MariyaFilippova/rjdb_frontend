@@ -8,7 +8,7 @@ const Header =  () => {
                 <h className = {s.text}>
                 Russian Job DataBase
                     </h>
-                    {/*<img className={s.img} src = "https://pp.userapi.com/c844417/v844417232/1e18f8/yPBob_4jBJE.jpg" height={100} width={100}/>*/}
+                    <img className={s.img} src = "https://avatanplus.com/files/resources/mid/591036d6c57ee15be7563719.png" height={120} width={120}/>
         </div>);
 
 

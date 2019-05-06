@@ -55,10 +55,11 @@
 }
 .noResume
 {
-    font-size: 200%;
+    font-size: 250%;
+    margin-top: 20%;
     color: #524f4e;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 10%;
+    margin-left: 5%;
 
     line-height: 80px;
 
@@ -122,11 +123,12 @@ b:hover {
     transform: translateY(-7px);
 }
 .select{
-    background: url(https://png.icons8.com/ios/1600/double-down-filled.png) 96% / 15% no-repeat #eee;
+    background: url(https://png.icons8.com/ios/1600/double-down-filled.png) 96% / 10% no-repeat #eee;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     height: 34px;
+    width: 250px;
 }
 .main_container {
     width: 250px;
@@ -165,7 +167,7 @@ b:hover {
     background: #eeeeee;
     color: #524f4e;
     font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
+    font-size: 20px;
 }
 .back_card {
 
@@ -181,4 +183,12 @@ b:hover {
 
     text-align: center;
     transform: rotateY(180deg);
+}
+.name {
+    overflow: hidden;
+    text-align: center;
+    color: lightseagreen;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+
 }

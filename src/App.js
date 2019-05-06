@@ -8,13 +8,16 @@ import ResumePageContainer from "./Components/resumes/ResumePageContainer";
 import {BrowserRouter, Route} from "react-router-dom";
 import Profile from "./Components/profile/Profile";
 
+import GoodJob from "./Components/GoodJob";
+
 const App =  (props) => {
     return (
         <BrowserRouter>
             <div className='app-wrapper'>
 
                 <Menu />
-               <Header />
+
+                <Header />
                <div className='app-wrapper-content'>
                    <Route path = "/resumes" render = { () => <ResumePageContainer store = {props.store}/> }
                    />
@@ -23,6 +26,7 @@ const App =  (props) => {
                    <Route path= "/vacancies" render = { () => <VacancyPageContainer store = {props.store}/>}
 
                    />
+                   <Route path= "/goodJobBro" render = { () => <GoodJob store = {props.store}/>}/>
 
                </div>
             </div>

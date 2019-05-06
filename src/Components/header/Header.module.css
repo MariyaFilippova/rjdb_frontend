@@ -33,8 +33,9 @@ h.span.space {
 }
 .img{
 
-    margin-right: 85%;
-    margin-outside: 5%;
+    margin-left: 5%;
+    margin-top: 3%;
+
 }
 .text{
     display: table;
